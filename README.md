@@ -7,16 +7,7 @@ The platform enables administrators to **run simulated phishing campaigns, ident
 
 ---
 
-## 🏢 Organization
 
-Developed for:
-
-**Maximus Atlas Pvt Ltd**
-https://www.maximusatlas.com/
-
-Maximus Atlas specializes in **technology solutions, cybersecurity services, and digital transformation for modern enterprises.**
-
----
 
 ## 🚀 Project Overview
 
@@ -69,6 +60,27 @@ This repository contains the **frontend implementation of the BioTrack Shield da
 * Measure employee awareness levels
 
 ---
+
+## 📸 Dashboard Screenshots
+
+### Global Admin Dashboard
+![Dashboard](screenshots/global_admin_dashboard.png)
+
+### Company Admin Dashboard
+![Companies](screenshots/company_admin_dashboard.png)
+
+### Company Admin Employees
+![Companies](screenshots/company_admin_employees.png)
+
+### Employee Dashboard
+![Employees](screenshots/employee_dashboard.png)
+
+### Email Quarantine Monitoring
+![Quarantine](screenshots/global_admin_quarantine.png)
+
+---
+
+
 
 ## 🖥️ Tech Stack
 
@@ -165,28 +177,11 @@ The platform focuses on **phishing awareness training and threat monitoring** th
 
 ---
 
-## 📌 Future Enhancements
-
-* Backend integration (FastAPI / Node.js)
-* AI-based phishing detection
-* Email gateway integration
-* Real-time alert system
-* Database integration (PostgreSQL / Supabase)
-
----
-
 ## 👩‍💻 Developer
 
 **Nandini Choudhary**
 
 MCA Student
 Cybersecurity & Software Development Enthusiast
-
----
-
-## 📄 Disclaimer
-
-This project was developed as part of a **real-world implementation for Maximus Atlas Pvt Ltd**.
-Some features may be simplified or modified for demonstration and portfolio purposes.
 
 ---
