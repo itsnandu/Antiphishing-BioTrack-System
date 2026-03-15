@@ -1,0 +1,178 @@
+/*
+  =====================================================
+  GLOBAL — BioTrack Shield Anti-Phishing Dashboard
+  Font: Inter (matches the "Dashboard" screenshot font)
+  =====================================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Variables ── */
+:root {
+  /* Brand */
+  --primary:        #003dc3;
+  --primary-light:  #1a53d4;
+  --primary-dark:   #002fa3;
+  --primary-50:     #eff4ff;
+  --primary-100:    #dce8ff;
+  --primary-200:    #b8d0ff;
+  --primary-400:    #6693f0;
+
+  /* Sidebar gradient */
+  --sidebar-from:   #002fa3;
+  --sidebar-to:     #001a6e;
+
+  /* Surfaces */
+  --bg:             #f3f6fd;
+  --bg2:            #eaeef8;
+  --panel:          #ffffff;
+  --panel-hover:    #f7f9ff;
+
+  /* Borders */
+  --border:         #dde5f8;
+  --border2:        #c2d3f5;
+
+  /* Status */
+  --danger:         #dc2626;
+  --danger-light:   #fef2f2;
+  --danger-muted:   #fee2e2;
+  --warn:           #d97706;
+  --warn-light:     #fffbeb;
+  --warn-muted:     #fef3c7;
+  --success:        #16a34a;
+  --success-light:  #f0fdf4;
+  --success-muted:  #dcfce7;
+  --info:           #0891b2;
+  --info-light:     #ecfeff;
+  --info-muted:     #cffafe;
+
+  /* Text */
+  --text:           #0d1b3e;
+  --text-2:         #1e3163;
+  --text-3:         #5a6f99;
+  --text-4:         #96a8cc;
+
+  /* ── TYPOGRAPHY — Inter everywhere ── */
+  --font:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:     'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Font sizes */
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 13px;
+  --text-md:   14px;
+  --text-lg:   16px;
+  --text-xl:   18px;
+  --text-2xl:  22px;
+  --text-3xl:  28px;
+
+  /* Font weights */
+  --fw-normal:    400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-extrabold: 800;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-snug:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.08em;
+  --tracking-widest: 0.14em;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,61,195,0.06);
+  --shadow-md:  0 4px 16px rgba(0,61,195,0.09);
+  --shadow-lg:  0 8px 32px rgba(0,61,195,0.12);
+  --shadow-xl:  0 20px 60px rgba(0,61,195,0.14);
+
+  /* Layout */
+  --sidebar-w:           252px;
+  --sidebar-collapsed-w: 70px;
+  --topbar-h:            60px;
+
+  /* Transitions */
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Base ── */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--text-base);
+  font-weight: var(--fw-normal);
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent body scroll when mobile drawer is open */
+body.sidebar-drawer-open {
+  overflow: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-400); }
+
+/* ── Ensure Inter is used for ALL form elements ── */
+input, button, select, textarea, label, th, td, a {
+  font-family: inherit;
+}
+
+/* ── Keyframes ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-4px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes notifPing {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes orbitSpin {
+  from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+
+/* ── Animation helpers ── */
+.animate-fade-up  { animation: fadeUp  0.36s var(--ease-out) both; }
+.animate-fade-in  { animation: fadeIn  0.24s ease both; }
+.animate-scale-in { animation: scaleIn 0.26s ease both; }
+.stagger-1 { animation-delay: 0.06s; }
+.stagger-2 { animation-delay: 0.12s; }
+.stagger-3 { animation-delay: 0.18s; }
+.stagger-4 { animation-delay: 0.24s; }
